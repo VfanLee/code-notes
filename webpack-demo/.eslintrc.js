@@ -8,5 +8,6 @@ module.exports = {
     ecmaVersion: 6,
     sourceType: 'module'
   },
-  rules: {}
+  rules: {},
+  plugins: ['import'] // 支持动态导入语法
 }
