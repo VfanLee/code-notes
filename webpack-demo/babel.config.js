@@ -4,10 +4,7 @@ module.exports = {
       '@babel/preset-env',
       {
         useBuiltIns: 'usage', // 按需加载 core-js 的 polyfill
-        corejs: {
-          version: 3,
-          proposals: true
-        }
+        corejs: 3 // 指定 corejs 版本
       }
     ]
   ]

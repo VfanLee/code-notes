@@ -15,7 +15,15 @@ module.exports = {
             test: /\.css$/,
             use: [
               'style-loader', // 将js中css通过创建style标签添加html文件中生效
-              'css-loader' // 将css资源编译成commonjs的模块到js中
+              'css-loader', // 将css资源编译成commonjs的模块到js中
+              {
+                loader: 'postcss-loader', // css 兼容性处理
+                options: {
+                  postcssOptions: {
+                    plugins: ['postcss-preset-env']
+                  }
+                }
+              }
             ]
           },
           {
@@ -23,6 +31,14 @@ module.exports = {
             use: [
               'style-loader',
               'css-loader',
+              {
+                loader: 'postcss-loader',
+                options: {
+                  postcssOptions: {
+                    plugins: ['postcss-preset-env']
+                  }
+                }
+              },
               'sass-loader' // 将sass编译成css文件
             ]
           },
@@ -45,7 +61,7 @@ module.exports = {
                 }
               },
               {
-                loader: 'babel-loader',
+                loader: 'babel-loader', // js 兼容性处理
                 options: {
                   cacheDirectory: true, // 开启 babel 缓存
                   cacheCompression: false, // 关闭缓存文件压缩

@@ -1,4 +1,3 @@
-import 'core-js'
 import './css/index.css'
 import './css/index.scss'
 import './css/iconfont.css'
